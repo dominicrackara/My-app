@@ -13,7 +13,7 @@ class OurApp extends StatelessWidget {
   const OurApp({super.key});
   @override
   Widget build(BuildContext context) {
-    return CupertinoApp(
+    return const CupertinoApp(
       debugShowCheckedModeBanner: false,
       home: MyTabController(),
     );
@@ -31,64 +31,69 @@ class _MyTabControllerState extends State<MyTabController> {
   @override
   Widget build(BuildContext context) {
     return CupertinoTabScaffold(
-      tabBar: CupertinoTabBar(items: [
-        BottomNavigationBarItem(
-          activeIcon: SvgPicture.asset("assets/svg/home_icon.svg",
-          colorFilter: const ColorFilter.mode(
-            CupertinoColors.systemGrey, BlendMode.srcIn)
-            icon: SvgPicture.asset("assets/svg/home_icon.svg",
-            colorFilter: const ColorFilter.mode(
-               CupertinoColors.systemGrey, BlendMode.srcIn)),
-            label:"Home"),
-          icon: Icon(CupertinoIcons.home), label:"Home"),
-        BottomNavigationBarItem(
-          activeIcon: SvgPicture.asset("assets/svg/home_icon.svg",
-          colorFilter: const ColorFilter.mode(
-            CupertinoColors.systemGrey, BlendMode.srcIn)
-            icon: SvgPicture.asset("assets/svg/home_icon.svg",
-            colorFilter: const ColorFilter.mode(
-               CupertinoColors.systemGrey, BlendMode.srcIn)),
-            label:"Home"),
-          icon: Icon(CupertinoIcons.home), label:"Home"),
-        BottomNavigationBarItem(
-          activeIcon: SvgPicture.asset("assets/svg/home_icon.svg",
-          colorFilter: const ColorFilter.mode(
-            CupertinoColors.systemGrey, BlendMode.srcIn)
-            icon: SvgPicture.asset("assets/svg/home_icon.svg",
-            colorFilter: const ColorFilter.mode(
-               CupertinoColors.systemGrey, BlendMode.srcIn)),
-            label:"Home"),
-          icon: Icon(CupertinoIcons.home), label:"Home"),
-       BottomNavigationBarItem(
-          activeIcon: SvgPicture.asset("assets/svg/home_icon.svg",
-          colorFilter: const ColorFilter.mode(
-            CupertinoColors.systemGrey, BlendMode.srcIn)
-            icon: SvgPicture.asset("assets/svg/home_icon.svg",
-            colorFilter: const ColorFilter.mode(
-               CupertinoColors.systemGrey, BlendMode.srcIn)),
-            label:"Home"),
-          icon: Icon(CupertinoIcons.home), label:"Home"),
-          tabBuilder: (context, index)
-          
-          
-     
-      ]
-      
-      items),);
-      tabBuilder: (context, index){
-      switch (index){
-        case 0:
-           return HomeScreen();
-        case 1:
-           return ChatScreen();
-        case 2:
-           return DownloadSreen();
-        case 3:
-           return SettingScreen();
-        default:
-
-
-      }
-    } 
+        tabBar: CupertinoTabBar(items: [
+          BottomNavigationBarItem(
+              icon: SvgPicture.asset(
+                "assets/svg/home_icon.svg",
+                // ignore: deprecated_member_use
+                color: CupertinoColors.systemGrey,
+              ),
+              activeIcon: SvgPicture.asset(
+                "assets/svg/home_icon.svg",
+                // ignore: deprecated_member_use
+                color: const Color.fromARGB(255, 18, 120, 229),
+              ),
+              label: "Home"),
+          BottomNavigationBarItem(
+              icon: SvgPicture.asset(
+                "assets/svg/chat_icon.svg",
+                // ignore: deprecated_member_use
+                color: CupertinoColors.systemGrey,
+              ),
+              activeIcon: SvgPicture.asset(
+                "assets/svg/chat_icon.svg",
+                // ignore: deprecated_member_use
+                color: CupertinoColors.activeBlue,
+              ),
+              label: "Chat"),
+          BottomNavigationBarItem(
+              icon: SvgPicture.asset(
+                "assets/svg/download_icon.svg",
+                // ignore: deprecated_member_use
+                color: CupertinoColors.systemGrey,
+              ),
+              activeIcon: SvgPicture.asset(
+                "assets/svg/download_icon.svg",
+                // ignore: deprecated_member_use
+                color: CupertinoColors.activeBlue,
+              ),
+              label: "Download"),
+          BottomNavigationBarItem(
+              icon: SvgPicture.asset(
+                "assets/svg/setting_icon.svg",
+                // ignore: deprecated_member_use
+                color: CupertinoColors.systemGrey,
+              ),
+              activeIcon: SvgPicture.asset(
+                "assets/svg/setting_icon.svg",
+                // ignore: deprecated_member_use
+                color: CupertinoColors.activeBlue,
+              ),
+              label: "Setting"),
+        ]),
+        tabBuilder: (context, index) {
+          // tabBuilder: (context, index){
+          switch (index) {
+            case 0:
+              return const HomeScreen();
+            case 1:
+              return const ChatScreen();
+            case 2:
+              return const DownloadSreen();
+            case 3:
+              return const SettingScreen();
+            default:
+          }
+        });
   }
 }
