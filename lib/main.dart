@@ -89,10 +89,11 @@ class _MyTabControllerState extends State<MyTabController> {
             case 1:
               return const ChatScreen();
             case 2:
-              return const DownloadSreen();
+              return const DownloadScreen();
             case 3:
               return const SettingScreen();
             default:
+              return const HomeScreen(); 
           }
         });
   }
